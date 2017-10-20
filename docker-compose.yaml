@@ -7,6 +7,7 @@ services:
   database:
     image: percona:latest
     expose: [3306]
+    ports: [3380:3306]
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
       MYSQL_USER: "drupal_user"
