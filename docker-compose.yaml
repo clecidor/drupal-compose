@@ -1,0 +1,14 @@
+version: "3"
+services:
+  cms:
+    image: drupal:latest
+    expose: [80]
+    ports: ["8080:80"]
+  database:
+    image: percona:latest
+    expose: [3306]
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_USER: "drupal_user"
+      MYSQL_DATABASE: "drupal_site"
+      MYSQL_PASSWORD: "enter12345"
